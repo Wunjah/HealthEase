@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Health Consultation App Survey</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    h2 {
+      color: #333;
+      text-align: center;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      width: 600px;
+      margin: auto;
+    }
+
+    label {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 7px;
+      border: none;
+      border-radius: 5px;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    input[type="button"] {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    input[type="button"]:hover {
+      background-color: #3e8e41;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Health Consultation App Survey</h2>
+  <p>Please fill out the following information:</p>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+
+    <label for="use_case">How likely are you to use a health consultation app for the following use cases?</label>
+    <ul>
+      <li>
+        <input type="checkbox" id="use_case1" name="use_case1" value="yes" >
+        <label for="use_case1">Consulting with a doctor about a specific health concern</label>
+      </li>
+      <li>
+        <input type="checkbox" id="use_case2" name="use_case2" value="yes">
+        <label for="use_case2">Getting a prescription refill</label>
+      </li>
+      <li>
+        <input type="checkbox" id="use_case3" name="use_case3" value="yes">
+        <label for="use_case3">Accessing mental health support</label>
+      </li>
+      <li>
+        <input type="checkbox" id="use_case4" name="use_case4" value="yes">
+        <label for="use_case4">Tracking my health and fitness goals</label>
+      </li>
+    </ul>
+
+    <label for="features">What features would you like to see in a health consultation app? (check all that apply)</label>
+    <ul>
+      <li>
+        <input type="checkbox" id="feature1" name="feature1" value="yes">
+        <label for="feature1">Video consultations with doctors</label>
+      </li>
+      <li>
+        <input type="checkbox" id="feature2" name="feature2" value="yes">
+        <label for="feature2">In-app messaging with doctors</label>
+      </li>
+      <li>
+        <input type="checkbox" id="feature3" name="feature3" value="yes">
+        <label for="feature3">Prescription delivery</label>
+      </li>
+      <li>
+        <input type="checkbox" id="feature4" name="feature4" value="yes">
+        <label for="feature4">Integration with wearable devices</label>
+      </li>
+    </ul>
+
+    <label for="concerns">What concerns do you have about using a health consultation app?</label>
+    <textarea id="concerns" name="concerns" rows="4" cols="50"></textarea>
+
+    <input type="button" value="Submit" onclick="submitForm()">
+  </form>
+
+  <script>
+    function submitForm() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var age = document.getElementById("age").value;
+      var gender = document.getElementById("gender").value;
+      var use_case1 = document.getElementById("use_case1").checked;
+      var use_case2 = document.getElementById("use_case2").checked;
+      var use_case3 = document.getElementById("use_case3").checked;
+      var use_case4 = document.getElementById("use_case4").checked;
+      var feature1 = document.getElementById("feature1").checked;
+      var feature2 = document.getElementById("feature2").checked;
+      var feature3 = document.getElementById("feature3").checked;
+      var feature4 = document.getElementById("feature4").checked;
+      var concerns = document.getElementById("concerns").value;
+
+      // TODO: Process the form data and display the results to the user
+      // For example, you can display the results in an alert box:
+      var results = "Name: " + name + "\nEmail: " + email + "\nAge: " + age + "\nGender: " + gender + "\nUse Case 1: " + use_case1 + "\nUse Case 2: " + use_case2 + "\nUse Case 3: " + use_case3 + "\nUse Case 4: " + use_case4 + "\nFeature 1: " + feature1 + "\nFeature 2: " + feature2 + "\nFeature 3: " + feature3 + "\nFeature 4: " + feature4 + "\nConcerns: " + concerns;
+      alert(results);
+    }
+  </script>
+</body>
+</html>
